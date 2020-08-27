@@ -7,6 +7,8 @@ import java.util.List;
 
 public class News {
     @JsonIgnore
+    private String author_cakeday;
+    @JsonIgnore
     private String approved_at_utc;
     @JsonProperty("subreddit")
     private String subreddit;
@@ -182,11 +184,11 @@ public class News {
     private String is_robot_indexable;
     @JsonIgnore
     private String report_reasons;
-    @JsonIgnore
+    @JsonProperty("author")
     private String author;
     @JsonIgnore
     private String discussion_type;
-    @JsonProperty("num_commenrs")
+    @JsonProperty("num_comments")
     private int num_comments;
     @JsonIgnore
     private boolean send_replies;
@@ -210,8 +212,8 @@ public class News {
     private String url;
     @JsonIgnore
     private int subreddit_subscribers;
-    @JsonIgnore
-    private long created_utc;
+    @JsonProperty("created_utc")
+    private int created_utc;
     @JsonIgnore
     private int num_crossposts;
     @JsonIgnore
@@ -645,7 +647,7 @@ public class News {
         return subreddit_subscribers;
     }
 
-    public long getCreated_utc() {
+    public int getCreated_utc() {
         return created_utc;
     }
 
@@ -661,4 +663,7 @@ public class News {
         return is_video;
     }
 
+    public String getAuthor_cakeday() {
+        return author_cakeday;
+    }
 }
